@@ -12,6 +12,7 @@ namespace EcoFarm_LINQ
 {
     public partial class Form1 : Form
     {
+        #region system
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +40,8 @@ namespace EcoFarm_LINQ
             this.employeesTableAdapter.Fill(this.ecoFarmDataSet.Employees);
 
         }
-       
+        #endregion
+
         #region array 
         private void select_arr_Click(object sender, EventArgs e)
         {

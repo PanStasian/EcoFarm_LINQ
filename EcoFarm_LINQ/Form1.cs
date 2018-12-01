@@ -71,8 +71,16 @@ namespace EcoFarm_LINQ
 
         private void select_pos_code_Click(object sender, EventArgs e)
         {
-            var res = from m in ecoFarmDataSet.Employees where(m.Position_Code > 2 && m.Passport_Number.ToString().StartsWith("0")) orderby m.Full_Name select new { m.Full_Name, m.Employee_Number, m.Passport_Number, m.Passport_Series, m.Birth_Date, m.Position_Code};
-            dataGridView1.DataSource = res.ToList();
+            var res = (from m in ecoFarmDataSet.Employees where(m.Position_Code > 2 && m.Passport_Number.ToString().StartsWith("0")) orderby m.Full_Name select new
+            {
+                m.Full_Name,
+                m.Employee_Number,
+                m.Passport_Number,
+                m.Passport_Series,
+                m.Birth_Date,
+                m.Position_Code
+            }).ToList();
+            dataGridView1.DataSource = res;
         }
 
         #endregion

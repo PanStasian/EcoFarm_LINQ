@@ -64,6 +64,7 @@ namespace EcoFarm_LINQ
             dataGridView1.DataSource = ecoFarmDataSet.Employees.Where(x => x.Birth_Date >= dateTimePicker1.Value && x.Birth_Date <= dateTimePicker2.Value).OrderBy(x => x.Birth_Date).Select(emp => new
             {
                 emp.Full_Name,
+                emp.Birth_Date,
                 emp.Adress,
                 emp.Position_Code,
                 emp.Passport_Number,
@@ -116,7 +117,7 @@ namespace EcoFarm_LINQ
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
             //var young = (from m in emps orderby m.Age select m.Name).First();
             //yongTB.Text = young.ToString();
             //
